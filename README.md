@@ -42,7 +42,7 @@ docker run -it --rm -p 8080:8080 -p 1527:1527 test/simone-example
 ### Add Order
 
 ```bash
-curl -X POST -d "Coffee" 'http://localhost:8080/order'
+curl -X POST -H 'Content-Type: text/plain' -d "Coffee" 'http://localhost:8080/order'
 ```
 
 ### Read Orders
