@@ -1,16 +1,9 @@
 package se.uhr.simone.restbucks.boundary;
 
-import java.io.InputStream;
 import java.util.List;
 
 import jakarta.inject.Inject;
-import jakarta.ws.rs.Consumes;
-import jakarta.ws.rs.FormParam;
-import jakarta.ws.rs.GET;
-import jakarta.ws.rs.POST;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.PathParam;
-import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.EntityPart;
 import jakarta.ws.rs.core.GenericEntity;
 import jakarta.ws.rs.core.MediaType;
@@ -52,7 +45,7 @@ public class OrderResource {
 	@Inject
 	OrderFileLoader orderFileLoader;
 
-	@Operation(summary = "Create order")
+    @Operation(summary = "Create order")
 	@APIResponse(responseCode = "201", description = "The order is created")
 	@Consumes(MediaType.TEXT_PLAIN)
 	@POST
