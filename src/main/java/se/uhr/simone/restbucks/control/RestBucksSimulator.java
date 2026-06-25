@@ -7,7 +7,7 @@ import jakarta.inject.Inject;
 import jakarta.ws.rs.core.UriBuilder;
 import io.agroal.api.AgroalDataSource;
 import se.uhr.simone.core.SimOne;
-import se.uhr.simone.core.feed.entity.DerbyFeedRepository;
+import se.uhr.simone.core.feed.entity.SimoneFeedRepository;
 import se.uhr.simone.restbucks.entity.OrderRepositoryMap;
 
 @ApplicationScoped
@@ -25,7 +25,7 @@ public class RestBucksSimulator {
 	@Produces
 	@ApplicationScoped
 	public SimOne create() {
-		var feedRepository = new DerbyFeedRepository(feedDataSource);
+		var feedRepository = new SimoneFeedRepository(feedDataSource);
 
 		URI feedBaseUri = UriBuilder.fromUri(properties.baseURI).segment("feed").build();
 
